@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class Bumper : MonoBehaviour
 {
-    private float force = 1000f;
+    [SerializeField]
+    private float force = 10000f;
+    [SerializeField]
     private float forceRadius = 1.0f;
 
-
+    private Rigidbody ball;
+    
     void OnCollisionEnter(Collision collision)
     {
-        foreach(Collider col in Physics.OverlapSphere(transform.position, forceRadius))
+        ball = collision.rigidbody;
+        if (collision.gameObject.CompareTag("Ball"))
         {
-            if (col.GetComponent<Rigidbody>())
-            {
-                col.GetComponent<Rigidbody>().AddExplosionForce(force, transform.position, forceRadius);
-            }
+            Debug.Log("Bumper Hit");
+            ball.AddForce(transform.position - ball.position, ForceMode.Impulse);
         }
     }
 

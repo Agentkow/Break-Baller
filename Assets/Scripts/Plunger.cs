@@ -47,7 +47,7 @@ public class Plunger : MonoBehaviour
             {
                 if (power<=maxPower)
                 {
-                    power += 10 * Time.deltaTime;
+                    power += 20 * Time.deltaTime;
                 }
             }
             if (Input.GetButtonUp("Jump"))
