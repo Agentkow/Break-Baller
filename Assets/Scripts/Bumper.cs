@@ -7,18 +7,38 @@ public class Bumper : MonoBehaviour
     [SerializeField]
     private float force = 10000f;
     [SerializeField]
-    private float forceRadius = 1.0f;
+    private float forceRadius = 3f;
+
+    [SerializeField]
+    private GameManager manager;
+
+    [SerializeField]
+    private float points = 100f;
 
     private Rigidbody ball;
-    
+
+   
+
     void OnCollisionEnter(Collision collision)
     {
-        ball = collision.rigidbody;
-        if (collision.gameObject.CompareTag("Ball"))
+      
+        foreach (Collider col in Physics.OverlapSphere(transform.position, forceRadius))
         {
-            Debug.Log("Bumper Hit");
-            ball.AddForce(transform.position - ball.position, ForceMode.Impulse);
+            
+            if (collision.rigidbody)
+            {
+                Debug.Log("Hit");
+                manager.score += points;
+                collision.rigidbody.AddExplosionForce(force, transform.position, forceRadius);
+
+            }
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, forceRadius);
     }
 
 }

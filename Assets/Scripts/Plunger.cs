@@ -54,7 +54,7 @@ public class Plunger : MonoBehaviour
             {
                 foreach(Rigidbody r in ballList)
                 {
-                    r.AddForce(power*Vector3.forward*20);
+                    r.AddForce(power*Vector3.forward*50);
                 }
             }
         }
