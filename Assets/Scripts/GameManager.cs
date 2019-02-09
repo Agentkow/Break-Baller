@@ -7,8 +7,10 @@ public class GameManager : MonoBehaviour
 {
     private float ballLives = 3;
 
-    public float score;
+    public float health = 10;
 
+    public float score;
+    
     [SerializeField]
     private Transform ballSpawnPosition;
 
@@ -39,7 +41,6 @@ public class GameManager : MonoBehaviour
 
         if (GameObject.FindGameObjectsWithTag("Ball").Length <= 0 && ballLives!=0)
         {
-            ballLives--;
             Instantiate(ballPrefab, ballSpawnPosition.position, ballPrefab.gameObject.transform.rotation);
         }
     }
