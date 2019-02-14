@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private float ballLives = 3;
+    private float ballLives = 10;
 
     public float health = 10;
 
@@ -26,7 +27,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ballLives = 3;
+        ballLives = 10;
     }
 
     void FixedUpdate()
@@ -41,8 +42,26 @@ public class GameManager : MonoBehaviour
 
         if (GameObject.FindGameObjectsWithTag("Ball").Length <= 0 && ballLives!=0)
         {
+            ballLives--;
             Instantiate(ballPrefab, ballSpawnPosition.position, ballPrefab.gameObject.transform.rotation);
         }
+
+        if (health<=0)
+        {
+            StartCoroutine(EndGame());
+        }
+        if (Input.GetButtonDown("Cancel"))
+        {
+            SceneManager.LoadScene("Menu");
+
+        }
+
+    }
+
+    IEnumerator EndGame()
+    {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene("Menu");
     }
 
 

@@ -15,12 +15,16 @@ public class Points : MonoBehaviour
         manager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Ball"))
-        {
-            manager.score += points;
-        }
+    //void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Ball"))
+    //    {
+    //        manager.score += points;
+    //    }
         
+    //}
+    private void OnDestroy()
+    {
+        manager.score += points;
     }
 }
