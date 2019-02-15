@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class DeadZone : MonoBehaviour
 {
+    [SerializeField]
     private GameManager manager;
-    
-    // Start is called before the first frame update
-    void OnTriggerEnter(Collider other)
+
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Ball"))
         {
             Destroy(other.gameObject);
         }
-        else if (other.gameObject.CompareTag("Enemy"))
+
+        if (other.gameObject.CompareTag("Enemy"))
         {
+            Debug.Log("Hit");
             manager.health--;
             Destroy(other.gameObject);
         }

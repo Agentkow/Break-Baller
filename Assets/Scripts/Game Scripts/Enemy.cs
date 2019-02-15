@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         heartPos = GameObject.Find("Heart");
+        manager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
     
     private void Update()
@@ -40,7 +41,15 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
+            Debug.Log("Hit by ball");
             health -= damage;
+        }
+
+        if (collision.gameObject.CompareTag("Dead Zone"))
+        {
+            Debug.Log("Hit by other");
+            manager.health--;
+            Destroy(gameObject);
         }
     }
 }

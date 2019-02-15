@@ -15,7 +15,6 @@ public class Bumper : MonoBehaviour
         {
             if (collision.rigidbody)
             {
-                Debug.Log("Hit");
                 collision.rigidbody.AddExplosionForce(force, transform.position, forceRadius);
             }
         }

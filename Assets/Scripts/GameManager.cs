@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+#pragma warning disable 0168
     private float ballLives = 10;
 
     public float health = 10;
@@ -24,6 +25,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Text scoreText;
 
+    [SerializeField]
+    private Text healthText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +38,7 @@ public class GameManager : MonoBehaviour
     {
         scoreText.text = "Score: " + score;
         ballCountText.text = "BALL " + ballLives;
+        healthText.text = "Health " + health;
     }
 
     // Update is called once per frame
