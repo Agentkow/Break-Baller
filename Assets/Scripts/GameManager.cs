@@ -51,14 +51,16 @@ public class GameManager : MonoBehaviour
             Instantiate(ballPrefab, ballSpawnPosition.position, ballPrefab.gameObject.transform.rotation);
         }
 
-        if (health<=0)
+
+
+        if (health<=0 || ballLives <=0)
         {
             StartCoroutine(EndGame());
         }
+
         if (Input.GetButtonDown("Cancel"))
         {
-            SceneManager.LoadScene("Menu");
-
+            SceneManager.LoadScene("Main Menu");
         }
 
     }
@@ -66,7 +68,7 @@ public class GameManager : MonoBehaviour
     IEnumerator EndGame()
     {
         yield return new WaitForSeconds(2);
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Main Menu");
     }
 
 

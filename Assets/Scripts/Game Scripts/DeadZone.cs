@@ -16,7 +16,6 @@ public class DeadZone : MonoBehaviour
 
         if (other.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("Hit");
             manager.health--;
             Destroy(other.gameObject);
         }

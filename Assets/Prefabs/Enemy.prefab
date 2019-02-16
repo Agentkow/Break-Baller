@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2329089858784037094}
   - component: {fileID: 6800757733720764046}
   - component: {fileID: 3756351387720090997}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70679fba97e383f48bee9156e3d0ab6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   damage: 2
 --- !u!114 &6800757733720764046
 MonoBehaviour:
@@ -133,5 +133,5 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.71
+  m_Radius: 0.68
   m_Center: {x: 0, y: 0, z: 0}

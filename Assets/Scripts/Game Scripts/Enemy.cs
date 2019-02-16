@@ -16,8 +16,11 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private float damage= 2;
 
+    private CameraShake shake;
+
     void Start()
     {
+        shake = GameObject.Find("Camera Shake Control").GetComponent<CameraShake>();
         heartPos = GameObject.Find("Heart");
         manager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
@@ -41,15 +44,17 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
-            Debug.Log("Hit by ball");
             health -= damage;
         }
 
         if (collision.gameObject.CompareTag("Dead Zone"))
         {
-            Debug.Log("Hit by other");
             manager.health--;
             Destroy(gameObject);
         }
+    }
+    void OnDestroy()
+    {
+        shake.trigger = true;
     }
 }
