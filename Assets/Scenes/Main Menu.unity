@@ -820,6 +820,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuCheck: 0
   menuText: {fileID: 702782517}
+  leftFlipText: {fileID: 1775204946}
+  rightFlipText: {fileID: 747863489}
+  plungerText: {fileID: 1374372601}
 --- !u!4 &156872594
 Transform:
   m_ObjectHideFlags: 0
@@ -1453,7 +1456,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a86ab94f162bbc649a6fa70be4918722, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a8897e701cfba204cbe66ced8d6747ac, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

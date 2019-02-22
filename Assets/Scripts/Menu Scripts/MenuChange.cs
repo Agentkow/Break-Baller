@@ -11,8 +11,7 @@ public class MenuChange : MonoBehaviour
 
     [SerializeField]
     private GameObject creditsMenu;
-
-    private bool credits= false;
+    
 
     private void OnCollisionEnter(Collision collision)
     {
