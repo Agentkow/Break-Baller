@@ -14,6 +14,7 @@ public class CameraShake : MonoBehaviour
 
 
     public bool trigger = false;
+    public bool hurt = false;
 
     // Cinemachine Shake
     public CinemachineVirtualCamera VirtualCamera;
@@ -33,7 +34,16 @@ public class CameraShake : MonoBehaviour
         // TODO: Replace with your trigger
         if (trigger)
         {
-            ShakeElapsedTime = ShakeDuration;
+            if (hurt)
+            {
+                ShakeElapsedTime = ShakeDuration*5;
+                hurt = false;
+            }
+            else
+            {
+                ShakeElapsedTime = ShakeDuration;
+            }
+            
             trigger = false;
         }
 

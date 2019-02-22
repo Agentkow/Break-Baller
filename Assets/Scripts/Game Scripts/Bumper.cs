@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bumper : MonoBehaviour
 {
+#pragma warning disable 0649
     [SerializeField]
     private float force = 10000f;
     [SerializeField]

@@ -6,12 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-#pragma warning disable 0168
+#pragma warning disable 0649
     private float ballLives = 10;
+    private int initialFontSize = 22;
+    [SerializeField]
+    private int pointGainFontSize = 23;
 
     public float health = 10;
-
     public float score;
+    public bool pointGain;
     
     [SerializeField]
     private Transform ballSpawnPosition;
@@ -36,27 +39,27 @@ public class GameManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        scoreText.text = "Score: " + score;
+        scoreText.text = score.ToString(); ;
         ballCountText.text = "BALL " + ballLives;
-        healthText.text = "Health " + health;
+        healthText.text = "HEALTH " + health;
+        ballCountText.color = Color.white;
+        healthText.color = Color.white;
+
+        if (pointGain)
+        {
+            scoreText.fontSize = pointGainFontSize;
+            StartCoroutine(pointJump());
+        }
+        else
+        {
+            scoreText.fontSize = initialFontSize;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (GameObject.FindGameObjectsWithTag("Ball").Length <= 0 && ballLives!=0)
-        {
-            ballLives--;
-            Instantiate(ballPrefab, ballSpawnPosition.position, ballPrefab.gameObject.transform.rotation);
-        }
-
-
-
-        if (health<=0 || ballLives <=0)
-        {
-            StartCoroutine(EndGame());
-        }
+        LivesAndHealth();
 
         if (Input.GetButtonDown("Cancel"))
         {
@@ -65,11 +68,40 @@ public class GameManager : MonoBehaviour
 
     }
 
+    private void LivesAndHealth()
+    {
+        if (GameObject.FindGameObjectsWithTag("Ball").Length <= 0 && ballLives != 0)
+        {
+            ballLives--;
+            Instantiate(ballPrefab, ballSpawnPosition.position, ballPrefab.gameObject.transform.rotation);
+        }
+
+        if (health <= 3)
+        {
+            healthText.color = Color.red;
+        }
+
+        if (ballLives <= 3)
+        {
+            ballCountText.color = Color.red;
+        }
+
+        if (health <= 0 || ballLives <= 0)
+        {
+            StartCoroutine(EndGame());
+        }
+    }
+
     IEnumerator EndGame()
     {
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene("Main Menu");
     }
 
+    IEnumerator pointJump()
+    {
+        yield return new WaitForSeconds(0.3f);
+        pointGain = false;
+    }
 
 }

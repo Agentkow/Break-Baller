@@ -9,22 +9,29 @@ public class Points : MonoBehaviour
     [SerializeField]
     private float points = 100f;
 
+    private bool ballHit = false;
+
     // Start is called before the first frame update
     void Start()
     {
         manager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
-    //void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Ball"))
-    //    {
-    //        manager.score += points;
-    //    }
-        
-    //}
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ball"))
+        {
+            ballHit = true;
+        }
+    }
+
     private void OnDestroy()
     {
-        manager.score += points;
+        if (ballHit)
+        {
+            manager.score += points;
+            manager.pointGain = true;
+        }
+        
     }
 }

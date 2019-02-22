@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Plunger : MonoBehaviour
 {
+#pragma warning disable 0649
     [SerializeField]
     private float power;
     private float minPower = 0f;
@@ -14,6 +15,11 @@ public class Plunger : MonoBehaviour
     [SerializeField]
     private Slider powerSlider;
     private bool ballReady;
+
+    [SerializeField]
+    private AudioSource ballCharge;
+    [SerializeField]
+    private AudioSource ballLaunch;
 
     List<Rigidbody> ballList;
 
@@ -43,17 +49,24 @@ public class Plunger : MonoBehaviour
         if (ballList.Count>0)
         {
             ballReady = true;
+            if (Input.GetButtonDown("Jump"))
+            {
+                ballCharge.Play();
+            }
             if (Input.GetButton("Jump"))
             {
                 if (power<=maxPower)
                 {
-                    power += 20 * Time.deltaTime;
+                    power += 10 * Time.deltaTime;
+                    
                 }
             }
             if (Input.GetButtonUp("Jump"))
             {
                 foreach(Rigidbody r in ballList)
                 {
+                    ballCharge.Stop();
+                    ballLaunch.Play();
                     r.AddForce(power*Vector3.forward*50);
                 }
             }

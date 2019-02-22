@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Flipper : MonoBehaviour
 {
+#pragma warning disable 0649
     [SerializeField]
     private float restPos = 0f;
     [SerializeField]
@@ -17,8 +18,11 @@ public class Flipper : MonoBehaviour
     [SerializeField]
     private string inputName;
 
+    
+
     void Start()
     {
+        
         hinge = GetComponent<HingeJoint>();
         hinge.useSpring = true;
     }
@@ -38,6 +42,7 @@ public class Flipper : MonoBehaviour
             spring.targetPosition = restPos;
         }
 
+        
         hinge.spring = spring;
         hinge.useLimits = true;
     }

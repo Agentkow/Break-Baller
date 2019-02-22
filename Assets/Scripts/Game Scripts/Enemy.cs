@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+#pragma warning disable 0649
     private float health = 1;
     
     private GameManager manager;
@@ -17,6 +18,11 @@ public class Enemy : MonoBehaviour
     private float damage= 2;
 
     private CameraShake shake;
+
+    [SerializeField]
+    private GameObject explosion;
+
+    
 
     void Start()
     {
@@ -35,6 +41,7 @@ public class Enemy : MonoBehaviour
     {
         if (health <= 0)
         {
+            Instantiate(explosion, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }
@@ -49,6 +56,7 @@ public class Enemy : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Dead Zone"))
         {
+            shake.hurt = true;
             manager.health--;
             Destroy(gameObject);
         }
@@ -56,5 +64,6 @@ public class Enemy : MonoBehaviour
     void OnDestroy()
     {
         shake.trigger = true;
+        
     }
 }

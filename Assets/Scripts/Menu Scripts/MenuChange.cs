@@ -5,8 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class MenuChange : MonoBehaviour
 {
+#pragma warning disable 0649
     [SerializeField]
     private MenuManager manager;
+
+    [SerializeField]
+    private GameObject creditsMenu;
+
+    private bool credits= false;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -18,13 +24,9 @@ public class MenuChange : MonoBehaviour
             }
             else if (manager.menuCheck == 1)
             {
-
+                creditsMenu.SetActive(true);
             }
             else if (manager.menuCheck == 2)
-            {
-
-            }
-            else if (manager.menuCheck == 3)
             {
 #if UNITY_EDITOR
                 UnityEditor.EditorApplication.isPlaying = false;

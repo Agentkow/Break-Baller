@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-#pragma warning disable 0168 
+#pragma warning disable 0649
     [SerializeField]
     private GameObject enemy;
 

@@ -5,22 +5,22 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
+#pragma warning disable 0649
     [HideInInspector]
     public int menuCheck = 0;
 
     [SerializeField]
     private Text menuText;
-
+    
     private string[] menuChoices;
 
     // Start is called before the first frame update
     void Start()
     {
-        menuChoices = new string[4];
+        menuChoices = new string[3];
         menuChoices[0] = "Play";
-        menuChoices[1] = "Options";
-        menuChoices[2] = "Credits";
-        menuChoices[3] = "Exit";
+        menuChoices[1] = "Credits";
+        menuChoices[2] = "Exit";
     }
 
     // Update is called once per frame

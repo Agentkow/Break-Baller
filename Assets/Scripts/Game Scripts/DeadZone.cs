@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DeadZone : MonoBehaviour
 {
+#pragma warning disable 0649
     [SerializeField]
     private GameManager manager;
 
