@@ -17,8 +17,7 @@ public class MenuFlipperSounds : MonoBehaviour
 
     [SerializeField]
     private string inputName;
-
-    [SerializeField]
+    
     private int randNum;
 
     // Start is called before the first frame update
