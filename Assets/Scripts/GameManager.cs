@@ -31,10 +31,18 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Text healthText;
 
+    [SerializeField]
+    private Text gameOver;
+
     // Start is called before the first frame update
     void Start()
     {
         ballLives = 10;
+    }
+
+    private void Awake()
+    {
+        gameOver.text = "";
     }
 
     void FixedUpdate()
@@ -72,8 +80,8 @@ public class GameManager : MonoBehaviour
     {
         if (GameObject.FindGameObjectsWithTag("Ball").Length <= 0 && ballLives != 0)
         {
-            ballLives--;
             Instantiate(ballPrefab, ballSpawnPosition.position, ballPrefab.gameObject.transform.rotation);
+            ballLives--;
         }
 
         if (health <= 3)
@@ -88,13 +96,14 @@ public class GameManager : MonoBehaviour
 
         if (health <= 0 || ballLives <= 0)
         {
+            gameOver.text = "GAME OVER";
             StartCoroutine(EndGame());
         }
     }
 
     IEnumerator EndGame()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(5);
         SceneManager.LoadScene("Main Menu");
     }
 
