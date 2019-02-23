@@ -21,6 +21,16 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     private Text plungerText;
 
+    [SerializeField]
+    private string leftBumperString;
+    [SerializeField]
+    private string rightBumperString;
+
+    [SerializeField]
+    private Image leftArrow;
+    [SerializeField]
+    private Image RightArrow;
+
     private float axisNum;
 
     // Start is called before the first frame update
@@ -41,8 +51,8 @@ public class MenuManager : MonoBehaviour
     {
         if (axisNum == 33)
         {
-            leftFlipText.text = "LT";
-            rightFlipText.text = "RT";
+            leftFlipText.text = "LB";
+            rightFlipText.text = "RB";
             plungerText.text = "A Button";
         }
         else
@@ -62,23 +72,34 @@ public class MenuManager : MonoBehaviour
             menuText.text = menuChoices[menuCheck];
         }
 
-        if (Input.GetButtonDown("Left Bumper"))
+        if (Input.GetButtonDown(leftBumperString))
         {
             menuCheck--;
         }
 
         if (menuCheck <= 0)
         {
+            leftArrow.enabled = false;
             menuCheck = 0;
         }
+        else
+        {
+            leftArrow.enabled = true;
+        }
 
-        if (Input.GetButtonDown("Right Bumper") && menuCheck <= 2)
+        if (Input.GetButtonDown(rightBumperString) && menuCheck <= 2)
         {
             menuCheck++;
         }
+
         if (menuCheck >= (menuChoices.Length - 1))
         {
+            RightArrow.enabled = false;
             menuCheck = (menuChoices.Length - 1);
+        }
+        else
+        {
+            RightArrow.enabled = true;
         }
     }
 }
