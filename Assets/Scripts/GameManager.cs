@@ -106,7 +106,7 @@ public class GameManager : MonoBehaviour
             ballLives--;
         }
 
-        if (health <= 3)
+        if (health <= 1)
         {
             healthText.color = Color.red;
         }
