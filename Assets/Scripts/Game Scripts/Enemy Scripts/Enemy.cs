@@ -58,6 +58,7 @@ public class Enemy : MonoBehaviour
         {
             shake.hurt = true;
             manager.health--;
+            manager.healthLose = true;
             Destroy(gameObject);
         }
     }

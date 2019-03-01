@@ -19,12 +19,10 @@ public class MenuFlipperSounds : MonoBehaviour
     private string inputName;
     
     private int randNum;
-    private float axisNum;
 
     // Start is called before the first frame update
     void Start()
     {
-        axisNum = Input.GetJoystickNames()[0].Length;
         sourceList = new AudioSource[4];
         sourceList[0] = menuSound_1;
         sourceList[1] = menuSound_2;
@@ -35,10 +33,8 @@ public class MenuFlipperSounds : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        axisNum = Input.GetJoystickNames()[0].Length;
         if (Input.GetButtonDown(inputName))
         {
-            
             randNum = Random.Range(0, 3);
             for (int i = 0; i < sourceList.Length; i++)
             {

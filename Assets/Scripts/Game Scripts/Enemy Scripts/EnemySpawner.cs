@@ -23,7 +23,7 @@ public class EnemySpawner : MonoBehaviour
     
     
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
         if (timer<=0)
@@ -33,7 +33,7 @@ public class EnemySpawner : MonoBehaviour
         }
         else
         {
-            timer -= 0.1f;
+            timer -= 1f *Time.deltaTime;
         }
         
     }

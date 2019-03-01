@@ -8,13 +8,15 @@ public class GameManager : MonoBehaviour
 {
 #pragma warning disable 0649
     private float ballLives = 10;
+
     private int initialFontSize = 22;
     [SerializeField]
-    private int pointGainFontSize = 23;
+    private int ChangeFontSize = 23;
 
     public float health = 10;
     public float score;
     public bool pointGain;
+    public bool healthLose;
     
     [SerializeField]
     private Transform ballSpawnPosition;
@@ -34,6 +36,13 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Text gameOver;
 
+    [SerializeField]
+    private Text multiplierText;
+
+    public float multiplier = 1;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,15 +61,26 @@ public class GameManager : MonoBehaviour
         healthText.text = "HEALTH " + health;
         ballCountText.color = Color.white;
         healthText.color = Color.white;
+        multiplierText.text = "X" + multiplier;
 
         if (pointGain)
         {
-            scoreText.fontSize = pointGainFontSize;
-            StartCoroutine(pointJump());
+            scoreText.fontSize = ChangeFontSize;
+            StartCoroutine(PointJump());
         }
         else
         {
             scoreText.fontSize = initialFontSize;
+        }
+
+        if (healthLose)
+        {
+            healthText.fontSize = ChangeFontSize;
+            StartCoroutine(HealthLose());
+        }
+        else
+        {
+            healthText.fontSize = initialFontSize;
         }
     }
 
@@ -73,6 +93,8 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene("Main Menu");
         }
+
+        
 
     }
 
@@ -107,10 +129,16 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Main Menu");
     }
 
-    IEnumerator pointJump()
+    IEnumerator PointJump()
     {
         yield return new WaitForSeconds(0.3f);
         pointGain = false;
+    }
+
+    IEnumerator HealthLose()
+    {
+        yield return new WaitForSeconds(0.3f);
+        healthLose = false;
     }
 
 }

@@ -20,6 +20,8 @@ public class Plunger : MonoBehaviour
     private AudioSource ballCharge;
     [SerializeField]
     private AudioSource ballLaunch;
+    [SerializeField]
+    private AudioSource ballMiss;
 
     List<Rigidbody> ballList;
 
@@ -46,6 +48,7 @@ public class Plunger : MonoBehaviour
         }
 
         powerSlider.value = power;
+
         if (ballList.Count>0)
         {
             ballReady = true;
@@ -66,7 +69,15 @@ public class Plunger : MonoBehaviour
                 foreach(Rigidbody r in ballList)
                 {
                     ballCharge.Stop();
-                    ballLaunch.Play();
+                    if (power >= maxPower-10)
+                    {
+                        ballLaunch.Play();
+                    }
+                    else
+                    {
+                        ballMiss.Play();
+                    }
+                    
                     r.AddForce(power*Vector3.forward*50);
                 }
             }

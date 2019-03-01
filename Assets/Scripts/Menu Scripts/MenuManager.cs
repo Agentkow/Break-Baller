@@ -42,6 +42,12 @@ public class MenuManager : MonoBehaviour
         menuChoices[1] = "Credits";
         menuChoices[2] = "Exit";
     }
+
+    void Awake()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
     void FixedUpdate()
     {
         axisNum = Input.GetJoystickNames()[0].Length;

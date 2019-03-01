@@ -29,7 +29,7 @@ public class Points : MonoBehaviour
     {
         if (ballHit)
         {
-            manager.score += points;
+            manager.score += points* manager.multiplier;
             manager.pointGain = true;
         }
         
