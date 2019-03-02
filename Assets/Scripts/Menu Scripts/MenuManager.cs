@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class MenuManager : MonoBehaviour
 {
 #pragma warning disable 0649
-    [HideInInspector]
+    //[HideInInspector]
+    [SerializeField]
     public int menuCheck = 0;
 
     [SerializeField]
@@ -31,7 +32,10 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     private Image RightArrow;
 
+    [SerializeField]
     private float axisNum;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -50,11 +54,11 @@ public class MenuManager : MonoBehaviour
     }
     void FixedUpdate()
     {
-        axisNum = Input.GetJoystickNames()[0].Length;
     }
     // Update is called once per frame
     void Update()
     {
+        axisNum = Input.GetJoystickNames()[0].Length;
         if (axisNum == 33)
         {
             leftFlipText.text = "LB";
@@ -80,6 +84,7 @@ public class MenuManager : MonoBehaviour
 
         if (Input.GetButtonDown(leftBumperString))
         {
+            Debug.Log("left");
             menuCheck--;
         }
 
@@ -95,6 +100,7 @@ public class MenuManager : MonoBehaviour
 
         if (Input.GetButtonDown(rightBumperString) && menuCheck <= 2)
         {
+            Debug.Log("right");
             menuCheck++;
         }
 

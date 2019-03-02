@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HitByBall : MonoBehaviour
 {
+#pragma warning disable 0649
     [SerializeField]
     private AudioSource hitSound;
 
