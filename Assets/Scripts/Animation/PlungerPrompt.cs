@@ -15,22 +15,20 @@ public class PlungerPrompt : MonoBehaviour
     [SerializeField]
     private Image prompt;
 
-    private float axisNum;
+    private float axisNum =0;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        axisNum = Input.GetJoystickNames()[0].Length;
-    }
+    
 
-    void FixedUpdate()
+   void FixedUpdate()
     {
-        axisNum = Input.GetJoystickNames()[0].Length;
+        StartCoroutine(ControllerCheck());
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+
         if (axisNum == 33)
         {
             prompt.sprite = aButtonSprite [(int)(Time.time)%aButtonSprite.Length];
@@ -38,6 +36,21 @@ public class PlungerPrompt : MonoBehaviour
         else
         {
             prompt.sprite = spaceBarSprite[(int)(Time.time) % spaceBarSprite.Length];
+        }
+    }
+    IEnumerator ControllerCheck()
+    {
+        yield return new WaitForSeconds(2f);
+        for (int i = 0; i < Input.GetJoystickNames().Length; i++)
+        {
+            if (!string.IsNullOrEmpty(Input.GetJoystickNames()[i]))
+            {
+                axisNum = Input.GetJoystickNames()[0].Length;
+            }
+            else
+            {
+                axisNum = 0;
+            }
         }
     }
 }

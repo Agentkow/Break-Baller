@@ -33,14 +33,13 @@ public class MenuManager : MonoBehaviour
     private Image RightArrow;
 
     [SerializeField]
-    private float axisNum;
+    private float axisNum = 0;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        axisNum = Input.GetJoystickNames()[0].Length;
         menuChoices = new string[3];
         menuChoices[0] = "Play";
         menuChoices[1] = "Credits";
@@ -54,11 +53,13 @@ public class MenuManager : MonoBehaviour
     }
     void FixedUpdate()
     {
+        StartCoroutine(ControllerCheck());
+        
     }
     // Update is called once per frame
     void Update()
     {
-        axisNum = Input.GetJoystickNames()[0].Length;
+        
         if (axisNum == 33)
         {
             leftFlipText.text = "LB";
@@ -112,6 +113,22 @@ public class MenuManager : MonoBehaviour
         else
         {
             RightArrow.enabled = true;
+        }
+    }
+
+    IEnumerator ControllerCheck()
+    {
+        yield return new WaitForSeconds(2f);
+        for (int i = 0; i < Input.GetJoystickNames().Length; i++)
+        {
+            if (!string.IsNullOrEmpty(Input.GetJoystickNames()[i]))
+            {
+                axisNum = Input.GetJoystickNames()[0].Length;
+            }
+            else
+            {
+                axisNum = 0;
+            }
         }
     }
 }
