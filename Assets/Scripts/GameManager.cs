@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
 #pragma warning disable 0649
-    private float ballLives = 10;
+    public float ballLives = 10;
 
     private int initialFontSize = 22;
     [SerializeField]
@@ -39,9 +39,15 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Text multiplierText;
 
+    [SerializeField]
+    private AudioSource music;
+
+    [SerializeField]
+    private AudioSource gameOverMusic;
+    
     public float multiplier = 1;
 
-
+    public bool gameOn = true;
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +57,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        gameOn = true;
         gameOver.text = "";
     }
 
@@ -82,25 +89,27 @@ public class GameManager : MonoBehaviour
         {
             healthText.fontSize = initialFontSize;
         }
+
+        if (health <= 0 || ballLives <= 0)
+        {
+            gameOver.text = "GAME OVER";
+            music.Stop();
+            gameOn = false;
+            StartCoroutine(EndGame());
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         LivesAndHealth();
-
-        if (Input.GetButtonDown("Cancel"))
-        {
-            SceneManager.LoadScene("Main Menu");
-        }
-
         
 
     }
 
     private void LivesAndHealth()
     {
-        if (GameObject.FindGameObjectsWithTag("Ball").Length <= 0 && ballLives != 0)
+        if (GameObject.FindGameObjectsWithTag("Ball").Length <= 0 && gameOn)
         {
             Instantiate(ballPrefab, ballSpawnPosition.position, ballPrefab.gameObject.transform.rotation);
             ballLives--;
@@ -116,16 +125,13 @@ public class GameManager : MonoBehaviour
             ballCountText.color = Color.red;
         }
 
-        if (health <= 0 || ballLives <= 0)
-        {
-            gameOver.text = "GAME OVER";
-            StartCoroutine(EndGame());
-        }
+        
     }
 
     IEnumerator EndGame()
     {
-        yield return new WaitForSeconds(5);
+        
+        yield return new WaitForSeconds(gameOverMusic.clip.length);
         SceneManager.LoadScene("Main Menu");
     }
 

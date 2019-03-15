@@ -1,0 +1,195 @@
+fileFormatVersion: 2
+guid: 983316bf1c8d6f141a665a5019f626d6
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: group1
+    100002: model1:mesh1651658759
+    100004: model1:transform1
+    100006: model1:transform2
+    100008: model2:mesh263355546
+    100010: model2:transform1
+    100012: model2:transform2
+    100014: model:mesh1276891837
+    100016: model:mesh1395256895
+    100018: model:mesh1638170669
+    100020: model:mesh1651658759
+    100022: model:mesh1651658759 1
+    100024: model:mesh1651956358
+    100026: model:mesh1685646932
+    100028: model:mesh1704296005
+    100030: model:mesh263355546
+    100032: model:mesh263355546 1
+    100034: model:mesh324862718
+    100036: model:mesh324862718 1
+    100038: model:mesh338512066
+    100040: model:mesh387651163
+    100042: model:mesh387651163 1
+    100044: model:transform1
+    100046: model:transform10
+    100048: model:transform11
+    100050: model:transform12
+    100052: model:transform2
+    100054: model:transform3
+    100056: model:transform4
+    100058: model:transform5
+    100060: model:transform6
+    100062: model:transform7
+    100064: model:transform8
+    100066: model:transform9
+    100068: //RootNode
+    400000: group1
+    400002: model1:mesh1651658759
+    400004: model1:transform1
+    400006: model1:transform2
+    400008: model2:mesh263355546
+    400010: model2:transform1
+    400012: model2:transform2
+    400014: model:mesh1276891837
+    400016: model:mesh1395256895
+    400018: model:mesh1638170669
+    400020: model:mesh1651658759
+    400022: model:mesh1651658759 1
+    400024: model:mesh1651956358
+    400026: model:mesh1685646932
+    400028: model:mesh1704296005
+    400030: model:mesh263355546
+    400032: model:mesh263355546 1
+    400034: model:mesh324862718
+    400036: model:mesh324862718 1
+    400038: model:mesh338512066
+    400040: model:mesh387651163
+    400042: model:mesh387651163 1
+    400044: model:transform1
+    400046: model:transform10
+    400048: model:transform11
+    400050: model:transform12
+    400052: model:transform2
+    400054: model:transform3
+    400056: model:transform4
+    400058: model:transform5
+    400060: model:transform6
+    400062: model:transform7
+    400064: model:transform8
+    400066: model:transform9
+    400068: //RootNode
+    2100000: lambert1
+    2300000: model:mesh387651163
+    3300000: model:mesh387651163
+    4300000: model:mesh387651163
+    7400000: Walking
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Walking
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

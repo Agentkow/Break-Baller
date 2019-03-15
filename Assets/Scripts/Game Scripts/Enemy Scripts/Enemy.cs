@@ -22,7 +22,8 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private GameObject explosion;
 
-    
+    [SerializeField]
+    private Animator tikiAnimation;
 
     void Start()
     {
@@ -33,8 +34,10 @@ public class Enemy : MonoBehaviour
     
     private void Update()
     {
+        float randSpeed = speed * Random.Range(1, 5);
         transform.LookAt(heartPos.transform);
-        transform.Translate(Vector3.forward*(speed* Random.Range(1, 5)) *Time.deltaTime);
+        tikiAnimation.speed = randSpeed / 10;
+        transform.Translate(Vector3.forward*(randSpeed) *Time.deltaTime);
     }
 
     void FixedUpdate()

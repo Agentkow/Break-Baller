@@ -8,6 +8,9 @@ public class DeadZone : MonoBehaviour
     [SerializeField]
     private GameManager manager;
 
+    [SerializeField]
+    private AudioSource gameOverSound;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Ball"))
@@ -19,6 +22,10 @@ public class DeadZone : MonoBehaviour
         {
             manager.health--;
             Destroy(other.gameObject);
+        }
+        if (manager.health == 0 || manager.ballLives == 0)
+        {
+            gameOverSound.Play();
         }
     }
 }

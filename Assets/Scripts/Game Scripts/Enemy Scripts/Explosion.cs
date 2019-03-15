@@ -6,11 +6,8 @@ public class Explosion : MonoBehaviour
 {
     private ParticleSystem explosion;
     private AudioSource enemyDeathSounds;
-
-    [SerializeField]
-    private float minRandom;
-    [SerializeField]
-    private float maxRandom;
+    private GameManager manager;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -18,10 +15,11 @@ public class Explosion : MonoBehaviour
         enemyDeathSounds = GetComponent<AudioSource>();
         explosion = GetComponent<ParticleSystem>();
         StartCoroutine(DestroyExplosion());
+        manager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
     void Update()
     {
-        enemyDeathSounds.pitch = Random.Range(minRandom, maxRandom);
+        enemyDeathSounds.pitch = 0.6f+(0.1f*(manager.multiplier-1));
     }
     IEnumerator DestroyExplosion()
     {

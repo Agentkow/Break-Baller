@@ -35,6 +35,9 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     private float axisNum = 0;
 
+    [SerializeField]
+    private GameObject creditsMenu;
+    
 
 
     // Start is called before the first frame update
@@ -81,11 +84,13 @@ public class MenuManager : MonoBehaviour
         for (int i = 0; i < menuChoices.Length; i++)
         {
             menuText.text = menuChoices[menuCheck];
+            
         }
 
         if (Input.GetButtonDown(leftBumperString))
         {
             Debug.Log("left");
+            creditsMenu.SetActive(false);
             menuCheck--;
         }
 
@@ -102,6 +107,7 @@ public class MenuManager : MonoBehaviour
         if (Input.GetButtonDown(rightBumperString) && menuCheck <= 2)
         {
             Debug.Log("right");
+            creditsMenu.SetActive(false);
             menuCheck++;
         }
 

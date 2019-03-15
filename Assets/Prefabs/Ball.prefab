@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 3315315928381481344}
   - component: {fileID: 1881470206509241593}
   - component: {fileID: 5883322626334352778}
+  - component: {fileID: 4997509841313658500}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Ball
@@ -148,19 +149,20 @@ TrailRenderer:
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
+  m_LightmapParameters: {fileID: 111300000, guid: be24bd1bd73a2db4b99dc205b32afd21,
+    type: 2}
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Time: 1
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 16.636341
+    widthMultiplier: 20
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.011061947
+        time: 0
         value: 1
         inSlope: 0
         outSlope: 0
@@ -168,6 +170,15 @@ TrailRenderer:
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.98993284
+        value: 0
+        inSlope: -2.3572214
+        outSlope: -2.3572214
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.16610172
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -181,7 +192,7 @@ TrailRenderer:
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 16769
+      ctime0: 37586
       ctime1: 65535
       ctime2: 65535
       ctime3: 0
@@ -189,7 +200,7 @@ TrailRenderer:
       ctime5: 0
       ctime6: 0
       ctime7: 0
-      atime0: 16384
+      atime0: 37201
       atime1: 65535
       atime2: 0
       atime3: 0
@@ -205,7 +216,7 @@ TrailRenderer:
     alignment: 0
     textureMode: 0
     shadowBias: 0.5
-    generateLightingData: 0
+    generateLightingData: 1
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
@@ -526,3 +537,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!122 &4997509841313658500
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5360276989032736150}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_Size: 22
