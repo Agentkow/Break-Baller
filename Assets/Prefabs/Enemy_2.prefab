@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6800757733720764046}
   - component: {fileID: 3756351387720090997}
   m_Layer: 10
-  m_Name: Enemy_1
+  m_Name: Enemy_2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,10 +62,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70679fba97e383f48bee9156e3d0ab6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
-  speed: 3
-  damage: 1
-  explosion: {fileID: 8713649037516223325, guid: 239b5928a643eeb4ba755ded48de8082,
+  health: 6
+  speed: 2
+  damage: 2
+  explosion: {fileID: 8713649037516223325, guid: 55ab570223f71a647990838a3a31c517,
     type: 3}
   tikiAnimation: {fileID: 4769183030154676559}
 --- !u!114 &6800757733720764046
@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aa0bb9744477bf4fb3458392935ae89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: 100
+  points: 250
 --- !u!135 &3756351387720090997
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -136,7 +136,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
-  m_Color: {r: 0, g: 1, b: 0.88871, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.09945774, a: 1}
   m_Intensity: 21.25
   m_Range: 35.53
   m_SpotAngle: 30
@@ -174,8 +174,8 @@ Halo:
   m_Enabled: 1
   m_Color:
     serializedVersion: 2
-    rgba: 4290903808
-  m_Size: 41.41
+    rgba: 4278194431
+  m_Size: 54.05
 --- !u!1001 &4769183030161980463
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -197,7 +197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400068, guid: 983316bf1c8d6f141a665a5019f626d6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.55
+      value: -0.51
       objectReference: {fileID: 0}
     - target: {fileID: 400068, guid: 983316bf1c8d6f141a665a5019f626d6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -237,20 +237,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400068, guid: 983316bf1c8d6f141a665a5019f626d6, type: 3}
       propertyPath: m_LocalScale.x
-      value: 384.41217
+      value: 572.04376
       objectReference: {fileID: 0}
     - target: {fileID: 400068, guid: 983316bf1c8d6f141a665a5019f626d6, type: 3}
       propertyPath: m_LocalScale.y
-      value: 384.41196
+      value: 572.04346
       objectReference: {fileID: 0}
     - target: {fileID: 400068, guid: 983316bf1c8d6f141a665a5019f626d6, type: 3}
       propertyPath: m_LocalScale.z
-      value: 384.41208
+      value: 572.04364
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 983316bf1c8d6f141a665a5019f626d6, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 4ff9bd023957d8b4eaa6560bd76a1fbf, type: 2}
+      objectReference: {fileID: 2100000, guid: 3e1e078e7bfd0de41ad6f8acf7cbf0ff, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 983316bf1c8d6f141a665a5019f626d6, type: 3}
 --- !u!4 &4769183030162368235 stripped

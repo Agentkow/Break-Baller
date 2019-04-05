@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
 #pragma warning disable 0649
+    [SerializeField]
     private float health = 1;
     
     private GameManager manager;
