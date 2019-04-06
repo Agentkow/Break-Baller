@@ -37,7 +37,6 @@ public class PauseMenu : MonoBehaviour
     {
         if (gamePause)
         {
-            Resume();
             if (Input.GetButtonDown("Cancel"))
             {
                 SceneManager.LoadScene("Main Menu");

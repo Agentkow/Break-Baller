@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -34,7 +35,7 @@ public class GameManager : MonoBehaviour
     private Text healthText;
 
     [SerializeField]
-    private Text gameOver;
+    private TextMeshProUGUI gameOver;
 
     [SerializeField]
     private Text multiplierText;
@@ -44,6 +45,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private AudioSource gameOverMusic;
+
+    private HighScoreHolder scoreHolder;
     
     public float multiplier = 1;
 
@@ -59,6 +62,7 @@ public class GameManager : MonoBehaviour
     {
         gameOn = true;
         gameOver.text = "";
+        scoreHolder = GameObject.Find("High Score Holder").GetComponent<HighScoreHolder>();
     }
 
     void FixedUpdate()
@@ -130,8 +134,11 @@ public class GameManager : MonoBehaviour
 
     IEnumerator EndGame()
     {
-        
         yield return new WaitForSeconds(gameOverMusic.clip.length);
+        if (score>scoreHolder.highScore)
+        {
+            scoreHolder.highScore = score;
+        }
         SceneManager.LoadScene("Main Menu");
     }
 

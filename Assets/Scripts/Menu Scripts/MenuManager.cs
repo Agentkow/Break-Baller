@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class MenuManager : MonoBehaviour
 {
@@ -16,11 +17,14 @@ public class MenuManager : MonoBehaviour
     private string[] menuChoices;
 
     [SerializeField]
-    private Text leftFlipText;
+    private TextMeshProUGUI leftFlipText;
     [SerializeField]
-    private Text rightFlipText;
+    private TextMeshProUGUI rightFlipText;
     [SerializeField]
-    private Text plungerText;
+    private TextMeshProUGUI plungerText;
+
+    [SerializeField]
+    private TextMeshProUGUI highScoreText;
 
     [SerializeField]
     private string leftBumperString;
@@ -37,12 +41,14 @@ public class MenuManager : MonoBehaviour
 
     [SerializeField]
     private GameObject creditsMenu;
-    
 
+    [SerializeField]
+    private HighScoreHolder scoreHold;
 
     // Start is called before the first frame update
     void Start()
     {
+        scoreHold.SaveScore();
         menuChoices = new string[3];
         menuChoices[0] = "Play";
         menuChoices[1] = "Credits";
@@ -53,16 +59,16 @@ public class MenuManager : MonoBehaviour
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        scoreHold = GameObject.Find("High Score Holder").GetComponent<HighScoreHolder>();
+        highScoreText.text = scoreHold.highScore.ToString();
     }
     void FixedUpdate()
     {
         StartCoroutine(ControllerCheck());
-        
     }
     // Update is called once per frame
     void Update()
     {
-        
         if (axisNum == 33)
         {
             leftFlipText.text = "LB";
@@ -75,10 +81,10 @@ public class MenuManager : MonoBehaviour
             rightFlipText.text = "E";
             plungerText.text = "Space";
         }
-
         MenuChoiceSwap();
     }
 
+    
     private void MenuChoiceSwap()
     {
         for (int i = 0; i < menuChoices.Length; i++)

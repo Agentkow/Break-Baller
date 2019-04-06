@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BallRoll : MonoBehaviour
 {
+#pragma warning disable 0649
     private float highSpeeds;
     private float nomSpeed = 100f;
     
