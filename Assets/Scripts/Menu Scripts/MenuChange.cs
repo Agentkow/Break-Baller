@@ -11,14 +11,9 @@ public class MenuChange : MonoBehaviour
 
     [SerializeField]
     private GameObject creditsMenu;
-
-    [SerializeField]
-    private HighScoreHolder scoreHolder;
-
+    
     private void Awake()
     {
-        scoreHolder = GameObject.Find("High Score Holder").GetComponent<HighScoreHolder>();
-        scoreHolder.LoadScore();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -35,7 +30,6 @@ public class MenuChange : MonoBehaviour
             }
             else if (manager.menuCheck == 2)
             {
-                scoreHolder.SaveScore();
 #if UNITY_EDITOR
                 UnityEditor.EditorApplication.isPlaying = false;
 #else

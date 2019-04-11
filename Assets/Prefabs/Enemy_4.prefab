@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 2329089858784037094}
   - component: {fileID: 6800757733720764046}
   - component: {fileID: 3756351387720090997}
+  - component: {fileID: 7218502970779282924}
   m_Layer: 10
-  m_Name: Enemy_1
+  m_Name: Enemy_4
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 1500
-  forceRadius: 34.04
+  forceRadius: 25.9
 --- !u!114 &2329089858784037094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,10 +63,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70679fba97e383f48bee9156e3d0ab6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
-  speed: 3
-  damage: 1
-  explosion: {fileID: 8713649037516223325, guid: 239b5928a643eeb4ba755ded48de8082,
+  health: 2
+  speed: 4
+  damage: 2
+  explosion: {fileID: 8713649037516223325, guid: d40a06b7adf602e4cb3ff382b401904a,
     type: 3}
   tikiAnimation: {fileID: 4769183030154676559}
 --- !u!114 &6800757733720764046
@@ -80,7 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aa0bb9744477bf4fb3458392935ae89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: 100
+  points: 250
 --- !u!135 &3756351387720090997
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -94,6 +95,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.68
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7218502970779282924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2329089858784037088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d9f074e68970f4e977cf36a4dafc2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  block: {fileID: 7115483306291135611, guid: a2d1f90ecc3628f47a50f0fbe81115b8, type: 3}
 --- !u!1 &2805540179925669949
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,7 +150,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
-  m_Color: {r: 0, g: 1, b: 0.88871, a: 1}
+  m_Color: {r: 1, g: 0.10849059, b: 0.8637998, a: 1}
   m_Intensity: 21.25
   m_Range: 35.53
   m_SpotAngle: 30
@@ -174,8 +188,8 @@ Halo:
   m_Enabled: 1
   m_Color:
     serializedVersion: 2
-    rgba: 4290903808
-  m_Size: 41.41
+    rgba: 4291559679
+  m_Size: 54.05
 --- !u!1001 &4769183030161980463
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -193,15 +207,15 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 614b136cc5d014c4cbe3d33fe6774572, type: 2}
     - target: {fileID: 400068, guid: 983316bf1c8d6f141a665a5019f626d6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.03
+      value: -0.027
       objectReference: {fileID: 0}
     - target: {fileID: 400068, guid: 983316bf1c8d6f141a665a5019f626d6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.55
+      value: -0.508
       objectReference: {fileID: 0}
     - target: {fileID: 400068, guid: 983316bf1c8d6f141a665a5019f626d6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.1
+      value: 0.135
       objectReference: {fileID: 0}
     - target: {fileID: 400068, guid: 983316bf1c8d6f141a665a5019f626d6, type: 3}
       propertyPath: m_LocalRotation.x
@@ -237,20 +251,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400068, guid: 983316bf1c8d6f141a665a5019f626d6, type: 3}
       propertyPath: m_LocalScale.x
-      value: 384.41217
+      value: 261.88162
       objectReference: {fileID: 0}
     - target: {fileID: 400068, guid: 983316bf1c8d6f141a665a5019f626d6, type: 3}
       propertyPath: m_LocalScale.y
-      value: 384.41196
+      value: 261.8815
       objectReference: {fileID: 0}
     - target: {fileID: 400068, guid: 983316bf1c8d6f141a665a5019f626d6, type: 3}
       propertyPath: m_LocalScale.z
-      value: 384.41208
+      value: 261.8816
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 983316bf1c8d6f141a665a5019f626d6, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 4ff9bd023957d8b4eaa6560bd76a1fbf, type: 2}
+      objectReference: {fileID: 2100000, guid: 0aa12afb865cd314081fe0908fedcc78, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 983316bf1c8d6f141a665a5019f626d6, type: 3}
 --- !u!4 &4769183030162368235 stripped

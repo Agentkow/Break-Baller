@@ -12,7 +12,7 @@ public class MenuManager : MonoBehaviour
     public int menuCheck = 0;
 
     [SerializeField]
-    private Text menuText;
+    private TextMeshProUGUI menuText;
     
     private string[] menuChoices;
 
@@ -41,14 +41,10 @@ public class MenuManager : MonoBehaviour
 
     [SerializeField]
     private GameObject creditsMenu;
-
-    [SerializeField]
-    private HighScoreHolder scoreHold;
-
+    
     // Start is called before the first frame update
     void Start()
     {
-        scoreHold.SaveScore();
         menuChoices = new string[3];
         menuChoices[0] = "Play";
         menuChoices[1] = "Credits";
@@ -59,8 +55,7 @@ public class MenuManager : MonoBehaviour
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        scoreHold = GameObject.Find("High Score Holder").GetComponent<HighScoreHolder>();
-        highScoreText.text = scoreHold.highScore.ToString();
+        highScoreText.text = PlayerPrefs.GetFloat("High Score", 0).ToString();
     }
     void FixedUpdate()
     {

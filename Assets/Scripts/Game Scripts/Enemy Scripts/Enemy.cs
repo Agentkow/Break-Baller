@@ -45,7 +45,7 @@ public class Enemy : MonoBehaviour
     {
         if (health <= 0)
         {
-            Instantiate(explosion, transform.position, transform.rotation);
+            
             Destroy(gameObject);
         }
     }
@@ -56,6 +56,7 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.CompareTag("Ball"))
         {
             health -= damage;
+            Instantiate(explosion, transform.position, transform.rotation);
         }
 
         if (collision.gameObject.CompareTag("Dead Zone"))

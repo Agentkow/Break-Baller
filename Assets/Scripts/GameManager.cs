@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 
     private int initialFontSize = 22;
     [SerializeField]
-    private int ChangeFontSize = 23;
+    private int ChangeFontSize = 24;
 
     public float health = 10;
     public float score;
@@ -26,31 +26,31 @@ public class GameManager : MonoBehaviour
     private GameObject ballPrefab;
 
     [SerializeField]
-    private Text ballCountText;
+    private TextMeshProUGUI ballCountText;
 
     [SerializeField]
-    private Text scoreText;
+    private TextMeshProUGUI scoreText;
 
     [SerializeField]
-    private Text healthText;
+    private TextMeshProUGUI healthText;
 
     [SerializeField]
     private TextMeshProUGUI gameOver;
 
     [SerializeField]
-    private Text multiplierText;
+    private TextMeshProUGUI multiplierText;
 
     [SerializeField]
     private AudioSource music;
 
     [SerializeField]
     private AudioSource gameOverMusic;
-
-    private HighScoreHolder scoreHolder;
     
     public float multiplier = 1;
 
     public bool gameOn = true;
+
+    Color normalColor = new Color(255f, 243f, 209f);
 
     // Start is called before the first frame update
     void Start()
@@ -62,16 +62,15 @@ public class GameManager : MonoBehaviour
     {
         gameOn = true;
         gameOver.text = "";
-        scoreHolder = GameObject.Find("High Score Holder").GetComponent<HighScoreHolder>();
     }
 
     void FixedUpdate()
     {
-        scoreText.text = score.ToString(); ;
+        scoreText.text = score.ToString("00000000"); ;
         ballCountText.text = "BALL " + ballLives;
         healthText.text = "HEALTH " + health;
-        ballCountText.color = Color.white;
-        healthText.color = Color.white;
+        ballCountText.color = normalColor;
+        healthText.color = normalColor;
         multiplierText.text = "X" + multiplier;
 
         if (pointGain)
@@ -99,6 +98,10 @@ public class GameManager : MonoBehaviour
             gameOver.text = "GAME OVER";
             music.Stop();
             gameOn = false;
+            if (score > PlayerPrefs.GetFloat("High Score", 0))
+            {
+                PlayerPrefs.SetFloat("High Score", score);
+            }
             StartCoroutine(EndGame());
         }
     }
@@ -135,10 +138,7 @@ public class GameManager : MonoBehaviour
     IEnumerator EndGame()
     {
         yield return new WaitForSeconds(gameOverMusic.clip.length);
-        if (score>scoreHolder.highScore)
-        {
-            scoreHolder.highScore = score;
-        }
+        
         SceneManager.LoadScene("Main Menu");
     }
 
