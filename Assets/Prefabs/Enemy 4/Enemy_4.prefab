@@ -64,7 +64,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
-  speed: 4
+  speed: 3
   damage: 2
   explosion: {fileID: 8713649037516223325, guid: d40a06b7adf602e4cb3ff382b401904a,
     type: 3}
@@ -197,6 +197,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2329089858784037092}
     m_Modifications:
+    - target: {fileID: 9500000, guid: 983316bf1c8d6f141a665a5019f626d6, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 614b136cc5d014c4cbe3d33fe6774572, type: 2}
     - target: {fileID: 100068, guid: 983316bf1c8d6f141a665a5019f626d6, type: 3}
       propertyPath: m_Name
       value: Tiki_animated
@@ -261,10 +265,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0aa12afb865cd314081fe0908fedcc78, type: 2}
-    - target: {fileID: 9500000, guid: 983316bf1c8d6f141a665a5019f626d6, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 614b136cc5d014c4cbe3d33fe6774572, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 983316bf1c8d6f141a665a5019f626d6, type: 3}
 --- !u!4 &4769183030162368235 stripped

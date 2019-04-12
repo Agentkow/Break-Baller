@@ -10,9 +10,9 @@ public class GameManager : MonoBehaviour
 #pragma warning disable 0649
     public float ballLives = 10;
 
-    private int initialFontSize = 22;
     [SerializeField]
-    private int ChangeFontSize = 24;
+    private int initialFontSize = 24;
+    private int ChangeFontSize;
 
     public float health = 10;
     public float score;
@@ -62,6 +62,7 @@ public class GameManager : MonoBehaviour
     {
         gameOn = true;
         gameOver.text = "";
+        ChangeFontSize = initialFontSize + 1;
     }
 
     void FixedUpdate()

@@ -20,12 +20,17 @@ public class EnemySpawner : MonoBehaviour
 
     [SerializeField]
     private float timer = 10;
-    
-    
+
+    [SerializeField]
+    private float timeMin;
+
+    [SerializeField]
+    private float timeMax;
+
     // Update is called once per frame
     void FixedUpdate()
     {
-
+        setTime = setTime+Random.Range(timeMin,timeMax);
         if (timer<=0)
         {
             timer = setTime;

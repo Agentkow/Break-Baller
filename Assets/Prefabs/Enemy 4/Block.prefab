@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7115483306291135609}
   - component: {fileID: 7115483306291135608}
   - component: {fileID: 9191403464802892417}
+  - component: {fileID: 3038749925695812682}
   m_Layer: 11
   m_Name: Block
   m_TagString: Untagged
@@ -74,6 +75,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 100
+--- !u!114 &3038749925695812682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7115483306291135611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d93a104f061143d4f843d2fad075062c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 100
 --- !u!1001 &7115483306636097221
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -81,14 +95,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7115483306291135614}
     m_Modifications:
-    - target: {fileID: 100000, guid: 82c2b99942c40a1419e07caf18e2019c, type: 3}
-      propertyPath: m_Name
-      value: Single Cube 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 82c2b99942c40a1419e07caf18e2019c, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 82c2b99942c40a1419e07caf18e2019c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -144,6 +150,14 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 82c2b99942c40a1419e07caf18e2019c, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.82757
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 82c2b99942c40a1419e07caf18e2019c, type: 3}
+      propertyPath: m_Name
+      value: Single Cube 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 82c2b99942c40a1419e07caf18e2019c, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 82c2b99942c40a1419e07caf18e2019c, type: 3}
       propertyPath: m_Materials.Array.data[0]
