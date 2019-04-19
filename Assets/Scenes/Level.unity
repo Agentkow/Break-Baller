@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.54278344, g: 0.5057511, b: 0.52363575, a: 1}
+  m_IndirectSpecularColor: {r: 0.54205453, g: 0.5052127, b: 0.5234705, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2046,10 +2046,10 @@ MonoBehaviour:
   enemy: {fileID: 2329089858784037088, guid: 0e0b8d5939d2c3c45ab92daee959689b, type: 3}
   ranMin: -150
   ranMax: 150
-  setTime: 400
+  baseTime: 400
   timer: 600
   timeMin: 0
-  timeMax: 20
+  timeMax: 5
 --- !u!4 &351467576
 Transform:
   m_ObjectHideFlags: 0
@@ -2094,7 +2094,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballLives: 10
-  ChangeFontSize: 23
+  initialFontSize: 24
   health: 3
   score: 0
   pointGain: 0
@@ -3224,10 +3224,10 @@ MonoBehaviour:
   enemy: {fileID: 2329089858784037088, guid: cc41559dc409fa84795230a02a892134, type: 3}
   ranMin: -100
   ranMax: 100
-  setTime: 165
+  baseTime: 165
   timer: 300
   timeMin: 0
-  timeMax: 10
+  timeMax: 20
 --- !u!4 &626864738
 Transform:
   m_ObjectHideFlags: 0
@@ -4349,7 +4349,7 @@ MonoBehaviour:
   enemy: {fileID: 2329089858784037088, guid: c66bb3e22df201543a4946b4a7c813b0, type: 3}
   ranMin: -150
   ranMax: 150
-  setTime: 90
+  baseTime: 90
   timer: 750
   timeMin: 0
   timeMax: 10
@@ -4740,7 +4740,7 @@ MonoBehaviour:
   enemy: {fileID: 2329089858784037088, guid: b0a95f4fc7a093742af704405bdcc9e5, type: 3}
   ranMin: -200
   ranMax: 200
-  setTime: 10
+  baseTime: 10
   timer: 15
   timeMin: 0
   timeMax: 0
